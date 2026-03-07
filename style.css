@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: "JetBrains Mono", monospace;
   background: #111;
+  /* color: #bbb; */
   color: #ddd;
 }
 
@@ -67,7 +68,10 @@ body {
 }
 
 strong {
-  color: #ffcc00;
+  /*color: #ffcc00;*/
+  color: #d4a800;
+  /*color: #c49a00;*/
+  /*color: #b88a00;*/
 }
 
 #toggleBtn {
