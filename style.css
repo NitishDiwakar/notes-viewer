@@ -66,7 +66,7 @@ body {
   flex: 1;
   padding: 40px;
   white-space: pre-wrap;
-  line-height: 1.2;
+  /*line-height: 1.2;*/
 }
 
 strong {
