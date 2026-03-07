@@ -147,7 +147,7 @@ function processTags(text) {
 
   return text;
 }
-//
+// processPDF
 function processPDF(text, currentFilePath) {
 
   const dir = currentFilePath.substring(0, currentFilePath.lastIndexOf('/') + 1);
@@ -163,6 +163,19 @@ function processPDF(text, currentFilePath) {
   });
 }
 //
+
+// processLinks
+function processLinks(text) {
+
+  return text.replace(/LINK:(\S+)/g, function(match, url) {
+
+    const cleanUrl = url.trim();
+
+    return `<a href="${cleanUrl}" class="ext-link" target="_blank">${cleanUrl}</a>`;
+
+  });
+
+}
 
 function loadFile(file) {
 
@@ -180,6 +193,8 @@ function loadFile(file) {
       text = processImages(text, file);
 
       text = processPDF(text, file);
+
+      text = processLinks(text);
 
       text = processTags(text);
 

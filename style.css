@@ -174,3 +174,11 @@ html {
   text-decoration: underline;
 }
 
+.ext-link {
+  color: #6cf;
+  text-decoration: none;
+}
+
+.ext-link:hover {
+  text-decoration: underline;
+}
