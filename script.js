@@ -44,11 +44,28 @@ function renderTree(node, container, path = "") {
       file.className = "file";
       file.textContent = key;
 
-      file.onclick = () => {
+      /*file.onclick = () => {
         document.querySelectorAll(".file").forEach(f => f.classList.remove("active"));
         file.classList.add("active");
         loadFile(fullPath);
-      };
+      };*/
+    // Hide tree on mobile after click
+      
+file.onclick = () => {
+
+  document.querySelectorAll(".file").forEach(f => f.classList.remove("active"));
+  file.classList.add("active");
+
+  loadFile(fullPath);
+
+  // Mobile improvement
+  if (window.innerWidth <= 768) {
+    const assetsFolder = document.querySelector("#sidebar .folder-title");
+    if (assetsFolder) assetsFolder.click();   // collapse sidebar
+    window.scrollTo(0, 0);                    // jump to content
+  }
+};
+    //
 
       container.appendChild(file);
 
