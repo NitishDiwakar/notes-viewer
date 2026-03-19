@@ -189,3 +189,17 @@ html {
   text-decoration: underline;
 }
 
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  color: #aaa;
+  font-size: 18px;
+  
+  display: none;
+  pointer-events: none;
+}
+

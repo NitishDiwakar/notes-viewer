@@ -196,6 +196,9 @@ function processLinks(text) {
 
 function loadFile(file) {
 
+  const loader = document.getElementById("loader");
+  loader.style.display = "block";   // show
+
   fetch(file)
     .then(r => r.text())
     .then(text => {
@@ -206,16 +209,12 @@ function loadFile(file) {
         .replace(/>/g, "&gt;");
 
       text = text.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
-
       text = processImages(text, file);
-
-      text = processPDF(text, file);
-
-      text = processLinks(text);
-
       text = processTags(text);
 
       content.innerHTML = text;
+
+      loader.style.display = "none";   // hide
     });
 }
 
