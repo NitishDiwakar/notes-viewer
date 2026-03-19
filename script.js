@@ -226,3 +226,9 @@ if (toggleBtn) {
     sidebar.classList.toggle("open");
   };
 }
+
+
+window.addEventListener("load", function () {
+  document.getElementById("loader").style.display = "none";
+});
+
