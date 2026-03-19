@@ -211,9 +211,11 @@ function loadFile(file) {
         .replace(/>/g, "&gt;");
 
       text = text.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
+
       text = processImages(text, file);
       text = processTags(text);
       text = processLinks(text);
+      text = processPDF(text, file);
 
       content.innerHTML = text;
 
