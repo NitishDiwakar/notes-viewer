@@ -197,7 +197,9 @@ function processLinks(text) {
 function loadFile(file) {
 
   const loader = document.getElementById("loader");
-  loader.style.display = "block";   // show
+
+  content.innerHTML = "";           // clear old content first
+  loader.style.display = "block";   // show loader
 
   fetch(file)
     .then(r => r.text())
@@ -214,7 +216,7 @@ function loadFile(file) {
 
       content.innerHTML = text;
 
-      loader.style.display = "none";   // hide
+      loader.style.display = "none";   // hide loader
     });
 }
 
