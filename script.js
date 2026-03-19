@@ -213,6 +213,7 @@ function loadFile(file) {
       text = text.replace(/\*(.*?)\*/g, "<strong>$1</strong>");
       text = processImages(text, file);
       text = processTags(text);
+      text = processLinks(text);
 
       content.innerHTML = text;
 
