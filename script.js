@@ -53,6 +53,7 @@ function renderTree(node, container, path = "") {
       
 file.onclick = () => {
 
+  document.querySelectorAll(".file.active").forEach(f => f.classList.remove("active"));
   document.querySelectorAll(".file").forEach(f => f.classList.remove("active"));
   file.classList.add("active");
 
