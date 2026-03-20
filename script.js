@@ -51,22 +51,18 @@ function renderTree(node, container, path = "") {
       };*/
     // Hide tree on mobile after click
       
-
 file.onclick = () => {
 
-  if (currentActiveFile) {
-    currentActiveFile.classList.remove("active");
-  }
-
+  document.querySelectorAll(".file").forEach(f => f.classList.remove("active"));
   file.classList.add("active");
-  currentActiveFile = file;
 
   loadFile(fullPath);
 
+  // Mobile improvement
   if (window.innerWidth <= 768) {
     const assetsFolder = document.querySelector("#sidebar .folder-title");
-    if (assetsFolder) assetsFolder.click();
-    window.scrollTo(0, 0);
+    if (assetsFolder) assetsFolder.click();   // collapse sidebar
+    window.scrollTo(0, 0);                    // jump to content
   }
 };
     //
